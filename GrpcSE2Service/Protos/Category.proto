@@ -9,10 +9,15 @@ service Category{
 	rpc AddProduct(ProductCreate) returns(ProductInfo);
 	rpc GetProductById(ProductLookUp) returns(ProductInfo);
 	rpc GetProductsByCategoryId(CategoryLookUp) returns(stream ProductInfo);
+	rpc GetAllProducts(StudentAllLoopUp) returns( stream CategoryInfo);
+
 	
 }
 message CategoryLookUp{
 	int32 id=1;
+}
+message CategoryAllLookUp{
+
 }
 message CategoryCreate{
 	 string name=1;
