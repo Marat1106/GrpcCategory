@@ -16,18 +16,18 @@ namespace GrpcService.Services
             _logger = logger;
             _categoryRepository = categoryRepository;
         }
-        public override Task<CategorInfo>AddCategory(CategoryCreate request,ServiceCallContext context)
+        public override Task<CategorInfo> AddCategory(CategoryCreate request,ServiceCallContext context)
         {
-            var reply=_categoryRepository.AddCategory(request);
-            return Task.FromResult(reply);
+            return base.GetCategoryById(request, context);
+
         }
         public override Task<CategoryInfo>GetCategory(CategoryLookUp request,ServerCallContext context)
         {
-            return base.GetCategory(request, context);
+            return base.GetCategoryById(request, context);
         }
         public override Task<ProductInfo> AddProduct(CategoryLookUp request, ServerCallContext context)
         {
-            return base.GetCategory(request, context);
+            return base.AddProduct(request, context);
         }
         public override Task<ProductInfo> GetProductById(CategoryLookUp request, ServerCallContext context)
         {

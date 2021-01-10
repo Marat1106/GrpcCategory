@@ -1,4 +1,5 @@
-﻿using GrpcService.Models;
+﻿using GrpcService.Data;
+using GrpcService.Models;
 using GrpcService.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
@@ -10,6 +11,7 @@ namespace GrpcService.Repositories
 {
     public class CategoryRepository : ICategoryRepository
     {
+        private readonly DataContext _context;
         public Task<Models.Category> AddCotegroy(CategoryCreate category)
         {
             throw new NotImplementedException();

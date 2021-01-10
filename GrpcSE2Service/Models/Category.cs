@@ -10,6 +10,7 @@ namespace GrpcService.Models
         public int id { get; set; }
         public string Name{ get; set; }
         public int ParentCategoryId { get; set; }
+        public Category ParentCategory { get; set; }
 
     }
 }
